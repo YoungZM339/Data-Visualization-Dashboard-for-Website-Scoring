@@ -48,3 +48,6 @@ The `frontend` directory contains frontend code using Vue, Axios, VueRouter, Vue
 The `backend` directory contains backend code using Django (for backend web application framework support), Django REST Framework (for RESTful API support), Simple JWT (for user authentication support).
 
 The `docs` directory contains documentation.
+## Data and deployment notes
+
+Document the input schema, missing-value handling, scoring definitions, and aggregation grain before publishing a chart. Do not upload private website data or credentials. For deployment, configure backend and frontend endpoints through environment variables and verify that exported charts preserve their labels and units.
