@@ -1,52 +1,52 @@
 # Website Scoring Dashboard
 
-网站评分数据可视化原型。项目使用 Django REST 后端处理上传和任务记录，使用 Vue 2、Element UI、ECharts 和 DataV 展示网站体验指标、大屏看板和优化建议。
+A website-scoring data-visualization prototype. The Django REST backend handles uploads and task records, while Vue 2, Element UI, ECharts, and DataV present website-experience metrics, a large-screen dashboard, and optimization suggestions.
 
-## 功能范围
+## Feature Scope
 
-- JWT 登录与用户相关接口。
-- 数据上传和处理任务。
-- 任务记录和结果查看。
-- 网站体验仪表盘。
-- 大屏数据展示。
-- 静态优化建议页面。
+- JWT login and user-related endpoints.
+- Data uploads and processing tasks.
+- Task records and result inspection.
+- Website-experience dashboard.
+- Large-screen data display.
+- Static optimization-suggestion page.
 
-## 指标展示
+## Metrics Displayed
 
-前端组件覆盖用户体验、跳出率、加载/网络反馈、输入延迟、点击/页面错误、白屏以及总分/平均分等指标。具体字段、计算口径和数据质量以后台算法与实际数据源为准。
+Frontend components cover user experience, bounce rate, loading/network feedback, input delay, click/page errors, blank-screen metrics, and total/average scores. The exact fields, calculation definitions, and data quality depend on the backend algorithms and actual data source.
 
-## 技术栈
+## Technology Stack
 
-- 后端：Django 5、Django REST Framework、Simple JWT、pandas、PyMySQL。
-- 前端：Vue 2、Vue CLI、Element UI、ECharts、DataV。
+- Backend: Django 5, Django REST Framework, Simple JWT, pandas, and PyMySQL.
+- Frontend: Vue 2, Vue CLI, Element UI, ECharts, and DataV.
 
-## 本地开发
+## Local Development
 
-后端：
+Backend:
 
     cd backend/web_scoring
     pip install -r requirements.txt
     python manage.py migrate
     python manage.py runserver
 
-前端：
+Frontend:
 
     cd frontend
     npm install
     npm run dev
 
-在运行迁移或任务前，必须先审阅并配置自己的数据库、数据查询来源、跨域策略和服务地址。仓库中的占位或开发设置不应直接连接生产数据。
+Before running migrations or tasks, review and configure your own database, data-query source, CORS policy, and service URLs. Placeholder or development settings from the repository must not connect directly to production data.
 
-## 结果使用边界
+## Result Boundaries
 
-仪表盘分数和优化建议是对接入数据的可视化与算法输出，不是通用的网站性能认证。使用结果做业务或技术决策前，应核验：
+Dashboard scores and optimization suggestions visualize and process the connected data; they are not a general website-performance certification. Before using the results for business or technical decisions, verify:
 
-- 指标定义和时间窗口；
-- 数据采集完整性；
-- 样本代表性；
-- 算法/规则版本；
-- 与原始日志或监控系统的一致性。
+- Metric definitions and time windows;
+- Data-collection completeness;
+- Sample representativeness;
+- Algorithm and rule versions;
+- Consistency with original logs or monitoring systems.
 
-## 许可证
+## License
 
-请参阅仓库中的 LICENSE 文件。
+See the repository's LICENSE file.
