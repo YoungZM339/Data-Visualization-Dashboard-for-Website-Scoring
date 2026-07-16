@@ -1,53 +1,52 @@
-# Data-Visualization-Dashboard-for-Website-Scoring
+# Website Scoring Dashboard
 
-[![License](https://img.shields.io/github/license/youngzm339/Data-Visualization-Dashboard-for-Website-Scoring)](https://github.com/youngzm339/Data-Visualization-Dashboard-for-Website-Scoring/blob/master/LICENSE)
-[![Issues](https://img.shields.io/github/issues/youngzm339/Data-Visualization-Dashboard-for-Website-Scoring)](https://github.com/youngzm339/Data-Visualization-Dashboard-for-Website-Scoring/issues)
-[![Stars](https://img.shields.io/github/stars/youngzm339/Data-Visualization-Dashboard-for-Website-Scoring)](https://github.com/youngzm339/Data-Visualization-Dashboard-for-Website-Scoring)
+网站评分数据可视化原型。项目使用 Django REST 后端处理上传和任务记录，使用 Vue 2、Element UI、ECharts 和 DataV 展示网站体验指标、大屏看板和优化建议。
 
-![Data Visualization Dashboard for Website Scoring](/docs/imgs/readme_cover.jpeg)
+## 功能范围
 
-README of supported languages: [English](./README.md) | [简体中文](./docs/README-zh_CN.md)
+- JWT 登录与用户相关接口。
+- 数据上传和处理任务。
+- 任务记录和结果查看。
+- 网站体验仪表盘。
+- 大屏数据展示。
+- 静态优化建议页面。
 
-## Introduction
+## 指标展示
 
-The Data Visualization Dashboard for Website Scoring is a project aimed at visually displaying website scoring data through charts, graphs, and data visualizations. This dashboard allows users to intuitively understand the scoring of different websites, helping them make better decisions and optimize website performance. The project will provide intuitive and easy-to-understand data visualizations to help users quickly grasp website scoring trends and key metrics.
+前端组件覆盖用户体验、跳出率、加载/网络反馈、输入延迟、点击/页面错误、白屏以及总分/平均分等指标。具体字段、计算口径和数据质量以后台算法与实际数据源为准。
 
-## Features
+## 技术栈
 
-### User Control
+- 后端：Django 5、Django REST Framework、Simple JWT、pandas、PyMySQL。
+- 前端：Vue 2、Vue CLI、Element UI、ECharts、DataV。
 
-![User Control](/docs/imgs/login.jpg)
+## 本地开发
 
-### Upload & Analysis
+后端：
 
-![Upload & Analysis](/docs/imgs/process.jpg)
+    cd backend/web_scoring
+    pip install -r requirements.txt
+    python manage.py migrate
+    python manage.py runserver
 
-### Visualization Dashboard
+前端：
 
-![Visualization Dashboard](/docs/imgs/LargeScreenDisplay.jpg)
+    cd frontend
+    npm install
+    npm run dev
 
-## Deployment Guide
+在运行迁移或任务前，必须先审阅并配置自己的数据库、数据查询来源、跨域策略和服务地址。仓库中的占位或开发设置不应直接连接生产数据。
 
-### Frontend
+## 结果使用边界
 
-- Install dependencies with `npm install`
-- Configure the base URL for backend requests in `frontend/api.js`
-- Run `npm run dev` (for testing environment only) or `npm run build`
+仪表盘分数和优化建议是对接入数据的可视化与算法输出，不是通用的网站性能认证。使用结果做业务或技术决策前，应核验：
 
-### Backend
+- 指标定义和时间窗口；
+- 数据采集完整性；
+- 样本代表性；
+- 算法/规则版本；
+- 与原始日志或监控系统的一致性。
 
-- Install dependencies with `pip install -r requirements.txt`
-- Configure MySQL database for algorithm computation results in `backend\web_scoring\algorithms\algorithm.py` and `backend\web_scoring\algorithms\views.py`
-- Initialize SQLite databases for user management and algorithm task control using `backend\web_scoring\manage.py migrate`
-- Run the server with `backend\web_scoring\manage.py runserver` (for testing environment only)
+## 许可证
 
-## Development Guide
-
-The `frontend` directory contains frontend code using Vue, Axios, VueRouter, Vuex (for frontend JavaScript framework support), ECharts, DataV, ElementUI (for component UI support).
-
-The `backend` directory contains backend code using Django (for backend web application framework support), Django REST Framework (for RESTful API support), Simple JWT (for user authentication support).
-
-The `docs` directory contains documentation.
-## Data and deployment notes
-
-Document the input schema, missing-value handling, scoring definitions, and aggregation grain before publishing a chart. Do not upload private website data or credentials. For deployment, configure backend and frontend endpoints through environment variables and verify that exported charts preserve their labels and units.
+请参阅仓库中的 LICENSE 文件。
